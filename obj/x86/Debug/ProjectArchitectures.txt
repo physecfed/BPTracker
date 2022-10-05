@@ -1,0 +1,1 @@
+C:\Users\physe\Documents\Projects\BPTracker\BPTracker.csproj;x86
