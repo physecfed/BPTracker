@@ -1,0 +1,7 @@
+*.dll
+conn_string.txt
+BPTracker/bin/x64/Debug/
+BPTracker/bin/x86/Debug/
+*.g.cs 
+*.g.i.cs 
+*.xbf

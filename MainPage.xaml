@@ -5,6 +5,7 @@
     xmlns:local="using:BPTracker"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -16,17 +17,20 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <CommandBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
-            <AppBarButton Icon="Accept" Label="AppBarButton"/>
-            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+            <AppBarButton Icon="Add" Label="Add"/>
+            <AppBarButton Icon="Edit" Label="Edit"/>
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Share" Label="Export"/>
         </CommandBar>
+        <syncfusion:SfDataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Page>
