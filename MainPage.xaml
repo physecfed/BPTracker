@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:sfcharts="using:Syncfusion.UI.Xaml.Charts"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -32,5 +33,115 @@
             <AppBarButton Icon="Share" Label="Export"/>
         </CommandBar>
         <syncfusion:SfDataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="1"/>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="systolicPressureBlock" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Text="137.0 ± 6.1"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="18" VerticalAlignment="Center" Text="mmHg"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18" VerticalAlignment="Center" Text="Systolic"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="diastolicPressureBlock" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Text="94.7 ± 2.5"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="18" VerticalAlignment="Center" Text="mmHg"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18" VerticalAlignment="Center" Text="Diastolic"/>
+            </Grid>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="AHA Blood Pressure Guidelines:"/>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="18" Text="Normal" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="normalBpRangeBlock" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Text="0%"/>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="18" Text="Elevated" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="elevatedBpRangeBlock" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Text="0%"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="18" Text="Hypertensive (Stage 1)" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="stage1BpRangeBlock" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Text="0%"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="18" Text="Hypertensive (Stage 2)" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="stage2BpRangeBlock" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Text="0%"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="18" Text="Crisis" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="crisisBpRangeBlock" Grid.Column="1" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Text="0%"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <sfcharts:SfChart Grid.Row="0">
+                <sfcharts:SfChart.PrimaryAxis>
+                    <sfcharts:DateTimeAxis Interval="4" LabelFormat="mm/dd/yy" IntervalType="Days"/>
+                </sfcharts:SfChart.PrimaryAxis>
+                <sfcharts:SfChart.SecondaryAxis>
+                    <sfcharts:NumericalAxis Header="Blood Pressure (mmHg)"/>
+                </sfcharts:SfChart.SecondaryAxis>
+            </sfcharts:SfChart>
+
+            <sfcharts:SfChart Grid.Row="3">
+                <sfcharts:SfChart.PrimaryAxis>
+                    <sfcharts:DateTimeAxis Interval="4" LabelFormat="mm/dd/yy" IntervalType="Days"/>
+                </sfcharts:SfChart.PrimaryAxis>
+                <sfcharts:SfChart.SecondaryAxis>
+                    <sfcharts:NumericalAxis Header="Heart Rate (bpm)"/>
+                </sfcharts:SfChart.SecondaryAxis>
+            </sfcharts:SfChart>
+        </Grid>
     </Grid>
 </Page>

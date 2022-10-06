@@ -17,6 +17,8 @@
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -29,6 +31,25 @@
       <RootProperty Name="PrimaryCommands" />
     </RootType>
     <RootType FullName="Syncfusion.UI.Xaml.Grid.SfDataGrid" />
+    <RootType FullName="Syncfusion.UI.Xaml.Charts.SfChart">
+      <RootProperty Name="PrimaryAxis" />
+      <RootProperty Name="SecondaryAxis" />
+    </RootType>
+    <RootType FullName="Syncfusion.UI.Xaml.Charts.DateTimeAxis">
+      <RootProperty Name="Interval" />
+      <RootProperty Name="LabelFormat" />
+      <RootProperty Name="IntervalType" />
+    </RootType>
+    <RootType FullName="Syncfusion.UI.Xaml.Charts.NumericalAxis">
+      <RootProperty Name="Header" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Text" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Icon" />
       <RootProperty Name="Label" />
