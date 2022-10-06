@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "99724b47-2725-4dfd-8caf-67cc3b57539a": {
+      "ProjectGuid": "99724b47-2725-4dfd-8caf-67cc3b57539a",
+      "DisplayName": "BPTracker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

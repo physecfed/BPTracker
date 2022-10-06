@@ -29,6 +29,10 @@ namespace BPTracker
 
             ApplicationView.PreferredLaunchViewSize = new Size(1300, 750);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            ViewModel.LoadFromCsv();
+
+            int test = 0;
         }
     }
 }

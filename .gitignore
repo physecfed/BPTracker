@@ -5,3 +5,4 @@ BPTracker/bin/x86/Debug/
 *.g.cs 
 *.g.i.cs 
 *.xbf
+bpdata.csv
