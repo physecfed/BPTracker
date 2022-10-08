@@ -30,7 +30,7 @@ namespace BPTracker
             ApplicationView.PreferredLaunchViewSize = new Size(1300, 750);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
-            ViewModel.LoadFromCsv();
+            ViewModel.LoadFromSql(@"Server=localhost\SQLEXPRESS,61916;Database=BPTracker;Trusted_Connection=True;");
 
             int test = 0;
         }
